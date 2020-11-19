@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 // import {Switch, HashRouter} from 'react-dom'
 import Home from './Home'
 // import addMeal from './addMeal'
-// import showMeal from './showMeal'
+import ShowMeal from './ShowMeal'
 
 // import { fetchFruits } from '../actions'
 

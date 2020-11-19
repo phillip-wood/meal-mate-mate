@@ -9,11 +9,11 @@ import { featchMeals } from '../actions'
 
 
 
-function Home (){
+function Home (props){
     return (
       <>
 
-      <button onClick={featchMeals()}></button>
+      <button onClick={()=> props.dispatch(featchMeals())}></button>
 
 
       <div className="meal-block">

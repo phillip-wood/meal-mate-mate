@@ -3,7 +3,7 @@ import request from 'superagent'
 
 // import { getFruits } from '../apis/fruits'
 
-// export const SET_FRUITS = 'SET_FRUITS'
+
 
 // export function setFruits (fruits) {
 //   return {
@@ -31,17 +31,14 @@ export const collectMeals =(meals)=>{
 
 
 export function  featchMeals() {
-  return (dispatch) =>{
-        dispatch(collectMeals())
+  return dispatch =>{
         return request
         .get('/api/v1/meals')
         .then(res => {
-          return res.body
+          return dispatch(collectMeals(res.body))
         })
-
-        //  .then(res =>{
-        //    dispatch(collectMeals(res.body))
-        //  })
-
+        .catch(err => {
+          console.log(err)
+       })
   }
 }
