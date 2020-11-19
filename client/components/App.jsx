@@ -1,26 +1,40 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import home from './home'
-import addMeal from './addMeal'
-import showMeal from './showMeal'
+// import {Switch, HashRouter} from 'react-dom'
+import Home from './Home'
+// import addMeal from './addMeal'
+// import showMeal from './showMeal'
 
 // import { fetchFruits } from '../actions'
 
 export class App extends React.Component {
   state = {
-    fruits: []
+ 
   }
 
   componentDidMount () {
     // this.props.dispatch(fetchFruits())
   }
 
+  renderPage = (page) => {
+    switch(page){
+      case 'home':
+        return <Home />
+      case 'addMeal':
+        return  <AddMeal />
+      case 'showMeal':
+        return  <ShowMeal />
+      default:
+        return <Home />
+    }
+  }
+
   render () {
     return (
       <>
-        <home />
-        <addMeal />
-        <showMeal />
+    
+        {this.renderPage(this.props.activePage)}
+      
       </>
     )
   }
@@ -28,7 +42,7 @@ export class App extends React.Component {
 
 function mapStateToProps (globalState) {
   return {
-    // fruits: globalState.fruits
+    activePage: globalState.activePage
   }
 }
 
