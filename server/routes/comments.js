@@ -17,4 +17,8 @@ router.get('/:id', (req, res) => {
     })
 })
 
+router.post('/api/v1/comments/', (req, res) => {
+   
+})
+
 module.exports = router
