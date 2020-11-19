@@ -1,7 +1,10 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import home from './home'
+import addMeal from './addMeal'
+import showMeal from './showMeal'
 
-import { fetchFruits } from '../actions'
+// import { fetchFruits } from '../actions'
 
 export class App extends React.Component {
   state = {
@@ -9,26 +12,23 @@ export class App extends React.Component {
   }
 
   componentDidMount () {
-    this.props.dispatch(fetchFruits())
+    // this.props.dispatch(fetchFruits())
   }
 
   render () {
     return (
-      <div className='app'>
-        <h1>Fullstack Boilerplate - with Fruits!</h1>
-        <ul>
-          {this.props.fruits.map(fruit => (
-            <li key={fruit}>{fruit}</li>
-          ))}
-        </ul>
-      </div>
+      <>
+        <home />
+        <addMeal />
+        <showMeal />
+      </>
     )
   }
 }
 
 function mapStateToProps (globalState) {
   return {
-    fruits: globalState.fruits
+    // fruits: globalState.fruits
   }
 }
 
