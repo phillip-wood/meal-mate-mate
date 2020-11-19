@@ -10,7 +10,7 @@ export function addMeal (meal) {
 
 
 
-// export const SET_FRUITS = 'SET_FRUITS'
+
 
 // export function setFruits (fruits) {
 //   return {
@@ -19,12 +19,4 @@ export function addMeal (meal) {
 //   }
 // }
 
-// export function fetchFruits () {
-//   return dispatch => {
-//     return getFruits()
-//       .then(fruits => {
-//         dispatch(setFruits(fruits))
-//         return null
-//       })
-//   }
-// }
+
