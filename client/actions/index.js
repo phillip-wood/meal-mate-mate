@@ -1,4 +1,37 @@
 export const ADD_MEAL = "ADD_MEAL"
+import getMeal from '../apis/meals'
+import request from 'superagent'
+
+
+export function updateComment(updatedState) {
+
+  return {
+    type: 'UPDATE_COMMENT',
+    updatedState
+  }
+}
+
+
+export const collectMeals =(meals)=>{
+  return{
+    type: 'GET_ALL_MEALS',
+    meals: meals
+  }
+}
+
+
+export function  featchMeals() {
+  return dispatch =>{
+    return request
+    .get('/api/v1/meals')
+    .then(res => {
+      return dispatch(collectMeals(res.body))
+    })
+    .catch(err => {
+      console.log(err)
+    })
+  }
+}
 
 
 export function addMeal (meal) {
@@ -7,16 +40,12 @@ export function addMeal (meal) {
     meal: meal,
   }
 }
-
-
-
-
-
-// export function setFruits (fruits) {
-//   return {
-//     type: SET_FRUITS,
-//     fruits
-//   }
-// }
-
-
+            // export function fetchFruits () {
+            //   return dispatch => {
+            //     return getFruits()
+            //       .then(fruits => {
+            //         dispatch(setFruits(fruits))
+            //         return null
+            //       })
+            //   }
+            // }

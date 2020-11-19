@@ -1,6 +1,7 @@
 // import { CHANGE_PAGE } from '../actions'
 
 const initialState = 'addMeal'
+// const initialState = 'home'
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
