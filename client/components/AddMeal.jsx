@@ -14,6 +14,7 @@ export class AddMeal extends React.Component {
   }
 
   handleChange = event => {
+  
     this.setState({
       [event.target.name]: event.target.value
     })
@@ -21,13 +22,8 @@ export class AddMeal extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault()
-    this.setState({
-      name: '',
-      author: '',
-      image: '',
-      ingredients: '',
-      description: '',
-    })
+    //take what is in local state, dispatch an action which is in api, to hit the post route
+    this.props.dispatch(postMeal(this.state))
   }
 
 
@@ -36,15 +32,15 @@ export class AddMeal extends React.Component {
       <>
         <form onSubmit={this.handleSubmit}>
           <p>Name:</p>
-          <input type="text" value={this.state.name} onChange={this.handleChange} />
+          <input type="text" onChange={this.handleChange} name='name'/>
           <p>Author:</p>
-          <input type="text" value={this.state.author} onChange={this.handleChange} />
+          <input type="text" onChange={this.handleChange} name='author'/>
           <p>Image:</p>
-          <input type="text" value={this.state.image} onChange={this.handleChange} />
+          <input type="text" onChange={this.handleChange} name='image'/>
           <p>Ingredients:</p>
-          <input type="text" value={this.state.ingredients} onChange={this.handleChange} />
+          <input type="text" onChange={this.handleChange} name='ingredients'/>
           <p>Description:</p>
-          <input type="text" value={this.state.description} onChange={this.handleChange} />
+          <input type="text" onChange={this.handleChange} name='description'/>
           <br />
           <input type="submit" value='Send' />
         </form>
