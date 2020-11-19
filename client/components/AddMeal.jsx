@@ -4,31 +4,58 @@ import { connect } from 'react-redux'
 
 export class AddMeal extends React.Component {
 
-  render () {
+  state = {
+    name: '',
+    author: '',
+    image: '',
+    ingredients: '',
+    description: '',
+
+  }
+
+  handleChange = event => {
+    this.setState({
+      [event.target.name]: event.target.value
+    })
+  }
+
+  handleSubmit = event => {
+    event.preventDefault()
+    this.setState({
+      name: '',
+      author: '',
+      image: '',
+      ingredients: '',
+      description: '',
+    })
+  }
+
+
+  render() {
     return (
       <>
-       <form>
-         <p>Name:</p>
-         <input type="text"/>
-         <p>Author:</p>
-         <input type="text"/>
-         <p>Image:</p>
-         <input type="text"/>
-         <p>Ingredients:</p>
-         <input type="text"/>
-         <p>Description:</p>
-         <input type="text"/>
-         <br/>
-         <input type="submit"/>
-       </form>
+        <form onSubmit={this.handleSubmit}>
+          <p>Name:</p>
+          <input type="text" value={this.state.name} onChange={this.handleChange} />
+          <p>Author:</p>
+          <input type="text" value={this.state.author} onChange={this.handleChange} />
+          <p>Image:</p>
+          <input type="text" value={this.state.image} onChange={this.handleChange} />
+          <p>Ingredients:</p>
+          <input type="text" value={this.state.ingredients} onChange={this.handleChange} />
+          <p>Description:</p>
+          <input type="text" value={this.state.description} onChange={this.handleChange} />
+          <br />
+          <input type="submit" value='Send' />
+        </form>
       </>
     )
   }
 }
 
-function mapStateToProps (globalState) {
+function mapStateToProps(globalState) {
   return {
-  
+    addMeal: globalState.addMeal,
   }
 }
 

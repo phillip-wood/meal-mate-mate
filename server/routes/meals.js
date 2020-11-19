@@ -16,4 +16,16 @@ router.get('/', (req, res) => {
     })
 })
 
+router.post('/addMeal', (req, res) => {
+  return db.addMealToHome()
+  .then(newMeal => {
+    res.json(newMeal)
+  })
+  .catch(err => {
+    console.log(err)
+    res.status(500).json({ message: 'You broke something' })
+  })
+}) 
+
+
 module.exports = router
