@@ -2,7 +2,6 @@ export const ADD_MEAL = "ADD_MEAL"
 import getMeal from '../apis/meals'
 import request from 'superagent'
 
-
 export function updateComment(updatedState) {
 
   return {
@@ -40,12 +39,27 @@ export function addMeal (meal) {
     meal: meal,
   }
 }
-            // export function fetchFruits () {
-            //   return dispatch => {
-            //     return getFruits()
-            //       .then(fruits => {
-            //         dispatch(setFruits(fruits))
-            //         return null
-            //       })
-            //   }
-            // }
+
+export function activeMeal (mealId) {
+  return{
+    type: 'ACTIVE_MEAL',
+    mealId: mealId,
+  }
+}
+
+export function activePage (page){
+  return {
+    type: 'CHANGE_PAGE',
+    page: page
+  }
+}
+
+// export function fetchFruits () {
+//   return dispatch => {
+//     return getFruits()
+//       .then(fruits => {
+//         dispatch(setFruits(fruits))
+//         return null
+//       })
+//   }
+// }
