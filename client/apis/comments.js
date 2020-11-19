@@ -19,7 +19,7 @@ export function fetchComments (id) {
      return request
       .get('/api/v1/comments/' + id)
       .then(res => {
-         console.log(res.body)
+        //  console.log(res.body)
          dispatch(showComments(res.body))
       })
       .catch(err => {
