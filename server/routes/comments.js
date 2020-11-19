@@ -17,8 +17,14 @@ router.get('/:id', (req, res) => {
     })
 })
 
-router.post('/api/v1/comments/', (req, res) => {
-   
+router.post('/', (req, res) => {
+   console.log('route hit')
+   return db.addComment(req.body)
+      .then(() => res.json({}))
+      .catch(err => {
+         console.log(err)
+         res.status(500).json({ message: 'Somthing went wrong' })
+       })
 })
 
 module.exports = router
