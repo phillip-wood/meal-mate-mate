@@ -1,26 +1,6 @@
 import getMeal from '../apis/meals'
 import request from 'superagent'
 
-// import { getFruits } from '../apis/fruits'
-
-
-
-// export function setFruits (fruits) {
-//   return {
-//     type: SET_FRUITS,
-//     fruits
-//   }
-// }
-
-// export function fetchFruits () {
-//   return dispatch => {
-//     return getFruits()
-//       .then(fruits => {
-//         dispatch(setFruits(fruits))
-//         return null
-//       })
-//   }
-// }
 
 export const collectMeals =(meals)=>{
   return{
@@ -40,5 +20,19 @@ export function  featchMeals() {
         .catch(err => {
           console.log(err)
        })
+  }
+}
+
+export function activeMeal (mealId) {
+  return{
+    type: 'ACTIVE_MEAL',
+    mealId: mealId,
+  }
+}
+
+export function activePage (page){
+  return {
+    type: 'CHANGE_PAGE',
+    page: page
   }
 }
