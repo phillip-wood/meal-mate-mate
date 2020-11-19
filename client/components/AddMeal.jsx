@@ -2,12 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 
-export class App extends React.Component {
-
-
-
-
-
+export class AddMeal extends React.Component {
 
   render () {
     return (
@@ -33,8 +28,8 @@ export class App extends React.Component {
 
 function mapStateToProps (globalState) {
   return {
-    fruits: globalState.fruits
+  
   }
 }
 
-export default connect(mapStateToProps)(App)
+export default connect(mapStateToProps)(AddMeal)
