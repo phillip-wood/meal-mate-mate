@@ -1,6 +1,9 @@
+import getMeal from '../apis/meals'
+import request from 'superagent'
+
 // import { getFruits } from '../apis/fruits'
 
-// export const SET_FRUITS = 'SET_FRUITS'
+
 
 // export function setFruits (fruits) {
 //   return {
@@ -18,3 +21,24 @@
 //       })
 //   }
 // }
+
+export const collectMeals =(meals)=>{
+  return{
+    type: 'GET_ALL_MEALS',
+    meals: meals
+  }
+}
+
+
+export function  featchMeals() {
+  return dispatch =>{
+        return request
+        .get('/api/v1/meals')
+        .then(res => {
+          return dispatch(collectMeals(res.body))
+        })
+        .catch(err => {
+          console.log(err)
+       })
+  }
+}

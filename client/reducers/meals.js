@@ -1,14 +1,18 @@
-// import { CHANGE_PAGE } from '../actions'
-
-const initialState = 'home'
+const initialState = []
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case 'CHANGE_PAGE':
-      return action.page
+    case 'GET_ALL_MEALS':
+        return action.meals
+
     default:
       return state
   }
 }
 
 export default reducer
+
+
+
+
+
