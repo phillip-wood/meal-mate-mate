@@ -4,8 +4,9 @@ const db = require('../db/comments')
 
 const router = express.Router()
 
-router.get('/', (req, res) => {
-  return db.getComments()
+router.get('/:id', (req, res) => {
+   const id = req.params.id
+  return db.getComments(id)
     .then(comments => {
       res.json(comments)
     }
