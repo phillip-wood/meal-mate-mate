@@ -20,7 +20,7 @@ export const collectMeals =(meals)=>{
 }
 
 
-export function  featchMeals() {
+export function  fetchMeals() {
   return dispatch =>{
     return request
     .get('/api/v1/meals')

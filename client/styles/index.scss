@@ -4,3 +4,19 @@ html,
 body {
   font-family: 'Montserrat', sans-serif;
 }
+
+//------------------Show-Meals---------------------//
+
+.showMeal{
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.showMealImg {
+  width: 40vw;
+  height: auto;
+  justify-content: center;
+  
+}
+
