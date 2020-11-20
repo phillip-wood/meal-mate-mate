@@ -19,7 +19,7 @@ class Home extends React.Component {
 
   componentDidUpdate (prevProps) {
     if (prevProps.meals !== this.props.meals){
-      this.props.dispatch(featchMeals())
+      this.props.dispatch(fetchMeals())
     }
   } 
 
