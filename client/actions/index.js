@@ -1,18 +1,19 @@
 import getMeal from '../apis/meals'
 import request from 'superagent'
 
-
-
-
-
 export function updateComment(updatedState) {
-
   return {
     type: 'UPDATE_COMMENT',
     updatedState
   }
 }
 
+export const showComments = comments => {
+   return {
+     type: 'SHOW_COMMENTS',
+     comments: comments
+   }
+ }
 
 export const collectMeals =(meals)=>{
   return{

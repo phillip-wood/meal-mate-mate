@@ -13,7 +13,6 @@ export class Comment extends React.Component {
       this.props.dispatch(fetchComments(2))
    }
 
-
    handleChange = (event) => {
       this.setState({
          input: event.target.value
@@ -28,7 +27,7 @@ export class Comment extends React.Component {
       let updatedState = this.props.comments.map(comment => ({...comment}))
       updatedState.push({id: 'new', comment: this.state.input})
       
-      //add comment to current global state
+      //add updated state to current global state
       this.props.dispatch(updateComment(updatedState))
 
       //reset local state to clear input
@@ -49,7 +48,7 @@ export class Comment extends React.Component {
           <input 
             type="text" 
             placeholder='Enter new comment here' 
-            onChange={(event) => this.handleChange(event)}
+            onChange={this.handleChange}
             value={this.state.input}/>
           <button onClick={this.submitComment}>Submit comment</button>
   
