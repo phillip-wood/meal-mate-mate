@@ -17,7 +17,6 @@ router.get('/', (req, res) => {
 })
 
 router.post('/addMeal', (req, res) => {
-  console.log(db)
   const meal = req.body
   return db.addMeal(meal)
   .then(newMeal => {

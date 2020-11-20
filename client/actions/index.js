@@ -11,6 +11,7 @@ export function updateComment(updatedState) {
 }
 
 
+
 export const collectMeals =(meals)=>{
   return{
     type: 'GET_ALL_MEALS',
