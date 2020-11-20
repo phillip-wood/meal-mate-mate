@@ -54,6 +54,7 @@ export function activeMeal (mealId) {
 }
 
 export function activePage (page){
+  console.log(page)
   return {
     type: 'CHANGE_PAGE',
     page: page
