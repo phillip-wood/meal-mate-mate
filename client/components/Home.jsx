@@ -17,11 +17,11 @@ class Home extends React.Component {
     this.props.dispatch(fetchMeals())
   }
 
-  // componentDidUpdate (prevProps) {
-  //   if (prevProps.id !== this.props.id){
-  //     this.props.dispatch(featchMeals())
-  //   }
-  // } 
+  componentDidUpdate (prevProps) {
+    if (prevProps.meals !== this.props.meals){
+      this.props.dispatch(featchMeals())
+    }
+  } 
 
   goToMealPage(id) {
     this.props.dispatch(activeMeal(id))
