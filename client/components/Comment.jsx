@@ -49,8 +49,8 @@ export class Comment extends React.Component {
             type="text" 
             placeholder='Enter new comment here' 
             onChange={this.handleChange}
-            value={this.state.input}/>
-          <button onClick={this.submitComment}>Submit comment</button>
+            value={this.state.input} className='commentBox'/>
+          <button onClick={this.submitComment} className='homebutton'>Submit comment</button>
   
         </>
       )

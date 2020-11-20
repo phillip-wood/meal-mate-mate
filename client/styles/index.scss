@@ -1,8 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap');
 
-html, 
+html{
+ 
+}
 body {
   font-family: 'Montserrat', sans-serif;
+  background-image: url('https://www.technocrazed.com/wp-content/uploads/2015/12/Kitchen-wallpaper-40-640x360.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+
 }
 
 //------------------Show-Meals---------------------//
@@ -10,6 +16,11 @@ body {
 .showMeal{
   display: flex;
   flex-direction: column;
+  background-color: blanchedalmond;
+  width: 40vw;
+  margin: 0 auto;
+  padding: 10px;
+  border: 3px solid black;
   
 }
 
@@ -20,3 +31,87 @@ body {
   
 }
 
+.form {
+  border: 5px solid black;
+  width: 200px;
+  padding: 10px;
+  background-color: blanchedalmond;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 42%;
+  margin-right: 40%;
+  margin-top: 2%;
+  border-radius: 10px;
+
+ 
+}
+
+.bigTextArea {
+  width: auto;
+  height: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.makeAMeal{
+  text-align: center;
+  background-color: blanchedalmond;
+  border: 5px solid black;
+  border-radius: 10px;
+  
+}
+
+.foodPic{
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+  display: block;
+  margin: 0 auto;
+  
+}
+.flex{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-flow: row;
+  justify-content: flex-start;
+  position: relative;
+  margin: 20px;
+}
+
+.mealBox{
+  margin: 2vw;
+  border: 3px solid blanchedalmond;
+  padding: 5px;
+  background-color: blanchedalmond;
+  border: 2px solid black;
+  align-items: center;
+  border-radius: 10px;
+  width: calc(25% - 5vw);
+  flex-shrink: 0;
+}
+
+.mealBoxh1{
+  background-color: blanchedalmond;
+  border: 1px solid black;
+  padding: 5px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.title{
+  text-align: center;
+  background-color: blanchedalmond;
+  border-radius: 10px;
+  border: 5px solid black;
+  padding: 10px;
+}
+.homebutton{
+  margin: 20px;
+  font-weight: bolder;
+}
+
+.commentBox{
+  height: 50px;
+}

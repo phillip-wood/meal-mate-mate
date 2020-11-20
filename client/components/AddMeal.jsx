@@ -44,8 +44,8 @@ export class AddMeal extends React.Component {
   render() {
     return (
       <>
-        <button onClick={()=> this.goToNewPage('home')}>home</button>
-        <form onSubmit={this.handleSubmit}>
+      <h1 className='makeAMeal'>Add your own meal here</h1>
+        <form onSubmit={this.handleSubmit} className='form'>
           <p>Meal Name:</p>
           <input type="text" onChange={this.handleChange} value={this.state.mealName} name='mealName'/>
           <p>Author:</p>
@@ -53,12 +53,13 @@ export class AddMeal extends React.Component {
           <p>Image URL:</p>
           <input type="text" onChange={this.handleChange} value={this.state.imgURL} name='imgURL'/>
           <p>Ingredients:</p>
-          <input type="text" onChange={this.handleChange} value={this.state.ingredients} name='ingredients'/>
+          <input type="text" onChange={this.handleChange} value={this.state.ingredients} name='ingredients' className='bigTextArea'/>
           <p>Description:</p>
-          <input type="text" onChange={this.handleChange} value={this.state.description} name='description'/>
+          <input type="text" onChange={this.handleChange} value={this.state.description} name='description' className='bigTextArea'/>
           <br/><br />
           <input type="submit" value='Send' />
         </form>
+        <button onClick={()=> this.goToNewPage('home')}>home</button>
       </>
     )
   }
