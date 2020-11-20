@@ -37,21 +37,20 @@ class Home extends React.Component {
   render() {
     return (
       <>
-
-      {/* <button onClick={()=> props.dispatch(featchMeals())}></button> */}
-
+      <div className='flex'> 
       {this.props.meals.map( meal => {
         return (
-          <div className="meal-block" key={meal.id}>
+          
+          <div key={meal.id} >
               <a onClick={()=> this.multiClick(meal.id, 'showMeal')}>
               <h1>{meal.mealName}</h1>
-              <img src={meal.imgURL} alt="meal"/>
+              <img src={meal.imgURL} alt="meal" className='foodPic'/>
             </a>
           </div>
 
         )
       })}
-      
+      </div>
       </>
     )
   }

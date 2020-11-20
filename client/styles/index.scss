@@ -1,8 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap');
 
-html, 
+html{
+ 
+}
 body {
   font-family: 'Montserrat', sans-serif;
+  background-image: url('https://www.technocrazed.com/wp-content/uploads/2015/12/Kitchen-wallpaper-40-640x360.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+
 }
 
 //------------------Show-Meals---------------------//
@@ -18,5 +24,50 @@ body {
   height: auto;
   justify-content: center;
   
+}
+
+.form {
+  border: 5px solid black;
+  width: 200px;
+  padding: 10px;
+  background-color: blanchedalmond;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 42%;
+  margin-right: 40%;
+  margin-top: 2%;
+  border-radius: 10px;
+
+ 
+}
+
+.bigTextArea {
+  width: auto;
+  height: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.makeAMeal{
+  text-align: center;
+  background-color: blanchedalmond;
+  border: 5px solid black;
+  border-radius: 10px;
+  
+}
+
+.foodPic{
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+}
+.flex{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-flow: row;
+  justify-content: flex-start;
+  position: relative;
 }
 
