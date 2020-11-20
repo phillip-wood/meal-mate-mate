@@ -1,12 +1,17 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { activePage } from '../actions'
 
 
 export class AddMeal extends React.Component {
+  goToNewPage(page){
+    this.props.dispatch(activePage(page))
+  }
 
   render () {
     return (
       <>
+       <button onClick={()=> this.goToNewPage('home')}>home</button>
        <form>
          <p>Name:</p>
          <input type="text"/>

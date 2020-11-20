@@ -2,8 +2,9 @@ import React from 'react'
 import { connect } from 'react-redux'
 // import {Switch, HashRouter} from 'react-dom'
 import Home from './Home'
-// import addMeal from './addMeal'
+import AddMeal from './AddMeal'
 import ShowMeal from './ShowMeal'
+import Header from './Header'
 
 // import { fetchFruits } from '../actions'
 
@@ -32,7 +33,7 @@ export class App extends React.Component {
   render () {
     return (
       <>
-    
+     
         {this.renderPage(this.props.activePage)}
       
       </>
