@@ -10,7 +10,7 @@ export class Comment extends React.Component {
    }
     
    componentDidMount() {
-      this.props.dispatch(fetchComments(2))
+      this.props.dispatch(fetchComments(this.props.id))
    }
 
    handleChange = (event) => {
@@ -21,7 +21,7 @@ export class Comment extends React.Component {
 
    submitComment = () => {
       //add comment to db
-      this.props.dispatch(postComment(2, this.state.input))
+      this.props.dispatch(postComment(this.props.id, this.state.input))
 
       // create new state to pass to action
       let updatedState = this.props.comments.map(comment => ({...comment}))
@@ -60,7 +60,7 @@ export class Comment extends React.Component {
   function mapStateToProps (globalState) {
     return {
       comments: globalState.mealComments,
-      // id: globalState.activeId
+      id: globalState.activeMeal
     }
   }
   
