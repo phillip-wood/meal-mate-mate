@@ -1,4 +1,6 @@
 import request from 'superagent'
+import { showComments } from '../actions'
+
 
 export function postComment (id, comment) {
 
@@ -6,12 +8,9 @@ export function postComment (id, comment) {
       comment: comment,
       meal_id: id
    }
-   return dispatch => {
+   return () => {
      return request
       .post('/api/v1/comments/').send(newComment)
-      .then(() => {
-
-      })
       .catch(err => {
          console.log(err)
       })
@@ -31,10 +30,5 @@ export function fetchComments (id) {
    }
  }
 
- export const showComments = comments => {
-   return {
-     type: 'SHOW_COMMENTS',
-     comments: comments
-   }
- }
+ 
  

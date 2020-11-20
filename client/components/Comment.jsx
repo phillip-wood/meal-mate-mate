@@ -10,9 +10,8 @@ export class Comment extends React.Component {
    }
     
    componentDidMount() {
-      this.props.dispatch(fetchComments(2))
+      this.props.dispatch(fetchComments(this.props.id))
    }
-
 
    handleChange = (event) => {
       this.setState({
@@ -22,13 +21,13 @@ export class Comment extends React.Component {
 
    submitComment = () => {
       //add comment to db
-      this.props.dispatch(postComment(2, this.state.input))
+      this.props.dispatch(postComment(this.props.id, this.state.input))
 
       // create new state to pass to action
       let updatedState = this.props.comments.map(comment => ({...comment}))
       updatedState.push({id: 'new', comment: this.state.input})
       
-      //add comment to current global state
+      //add updated state to current global state
       this.props.dispatch(updateComment(updatedState))
 
       //reset local state to clear input
@@ -49,7 +48,7 @@ export class Comment extends React.Component {
           <input 
             type="text" 
             placeholder='Enter new comment here' 
-            onChange={(event) => this.handleChange(event)}
+            onChange={this.handleChange}
             value={this.state.input}/>
           <button onClick={this.submitComment}>Submit comment</button>
   
@@ -61,7 +60,7 @@ export class Comment extends React.Component {
   function mapStateToProps (globalState) {
     return {
       comments: globalState.mealComments,
-      // id: globalState.activeId
+      id: globalState.activeMeal
     }
   }
   

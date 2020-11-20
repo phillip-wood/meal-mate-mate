@@ -1,9 +1,5 @@
-// import { CHANGE_PAGE } from '../actions'
 
-const initialState = 'home'
-// const initialState = 'home'
-
-const reducer = (state = initialState, action) => {
+const reducer = (state = 'home', action) => {
   switch (action.type) {
     case 'CHANGE_PAGE':
       return action.page

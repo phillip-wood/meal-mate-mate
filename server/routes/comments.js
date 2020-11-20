@@ -6,15 +6,14 @@ const router = express.Router()
 
 router.get('/:id', (req, res) => {
    const id = req.params.id
-  return db.getComments(id)
-    .then(comments => {
+   return db.getComments(id)
+      .then(comments => {
       res.json(comments)
-    }
-    )
-    .catch(err => {
+   })
+   .catch(err => {
       console.log(err)
       res.status(500).json({ message: 'Somthing went wrong' })
-    })
+   })
 })
 
 router.post('/', (req, res) => {
