@@ -5,6 +5,9 @@ import { postMeal } from '../apis/addMeal'
 
 
 export class AddMeal extends React.Component {
+  goToNewPage(page){
+    this.props.dispatch(activePage(page))
+  }
 
   state = {
     mealName: '',
@@ -56,6 +59,7 @@ export class AddMeal extends React.Component {
           <br/><br />
           <input type="submit" value='Send' />
         </form>
+        <button onClick={()=> this.goToNewPage('home')}>home</button>
       </>
     )
   }

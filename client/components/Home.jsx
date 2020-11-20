@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { fetchMeals, activeMeal, activePage } from '../actions'
+import Header from './Header'
 
 
 
@@ -37,7 +38,10 @@ class Home extends React.Component {
   render() {
     return (
       <>
+      <button onClick={()=> this.goToNewPage('addMeal')}>Add your own meal</button>
       <div className='flex'> 
+ 
+
       {this.props.meals.map( meal => {
         return (
           

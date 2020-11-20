@@ -16,6 +16,7 @@ export class ShowMeal extends React.Component {
   render () {
     const meal = this.props.meals.find(oneMeal => oneMeal.id == this.props.activeMeal)
 
+    console.log(meal)
     
     return (
       <>
