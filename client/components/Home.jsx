@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { featchMeals, activeMeal, activePage } from '../actions'
+import { fetchMeals, activeMeal, activePage } from '../actions'
 
 
 
@@ -13,7 +13,7 @@ import { featchMeals, activeMeal, activePage } from '../actions'
 class Home extends React.Component {
 
   componentDidMount = () => {
-    this.props.dispatch(featchMeals())
+    this.props.dispatch(fetchMeals())
   }
 
   // componentDidUpdate (prevProps) {
@@ -45,8 +45,7 @@ class Home extends React.Component {
           <div className="meal-block" key={meal.id}>
               <a onClick={()=> this.multiClick(meal.id, 'showMeal')}>
               <h1>{meal.mealName}</h1>
-              <img src={meal.imgURL} alt=""/>
-            <div>{meal.description}</div>
+              <img src={meal.imgURL} alt="meal"/>
             </a>
           </div>
 

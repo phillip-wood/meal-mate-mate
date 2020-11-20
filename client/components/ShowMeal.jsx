@@ -1,34 +1,37 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { featchMeals } from '../actions'
+import { fetchMeals, activePage } from '../actions'
 import Comment from './Comment'
 
 // imports the action
 
 
 export class ShowMeal extends React.Component {
-  
-      
-     componentDidMount() {
-        this.props.dispatch(featchMeals())
-     }
-     
-     
+
+    goToNewPage(page){
+        this.props.dispatch(activePage(page))
+      }
+    
 
   render () {
+    const meal = this.props.meals.find(oneMeal => oneMeal.id == this.props.activeMeal)
 
     
     return (
       <>
         <div className='showMeal'>
-        <img className='showMealImg' src=''></img>
-        <h2 className="showMealName">whitebait fritters</h2>
-        <p className="showMealIngred">{this.props.meals[0][id]}</p>
-        <p className="showMealDescrip">description</p>
-        <p className="showMealAuthor">author</p>
+            <img className='showMealImg' src={meal.imgURL}></img>
+            <h2 className="showMealName">{meal.mealName}</h2>
+            <h3>Ingredients</h3>
+            <p className="showMealIngred">{meal.ingredients}</p>
+            <h3>Description</h3>
+            <p className="showMealDescrip">{meal.description}</p>
+            <h3>Author</h3>
+            <p className="showMealAuthor">{meal.author}</p>
         </div>
+        <button onClick={()=> this.goToNewPage('home')}>home</button>
 
-        {/* <Comment /> */}
+        <Comment />
       </>
     )
   }
@@ -36,7 +39,8 @@ export class ShowMeal extends React.Component {
 
 function mapStateToProps (globalState) {
   return {
-    meals:globalState.meals
+    meals:globalState.meals,
+    activeMeal: globalState.activeMeal
   }
 }
 
