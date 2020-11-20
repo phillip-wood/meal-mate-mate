@@ -2,7 +2,8 @@ import React from 'react'
 import { connect } from 'react-redux'
 // import {Switch, HashRouter} from 'react-dom'
 import Home from './Home'
-import AddMeal from './AddMeal'
+ import AddMeal from './AddMeal'
+
 import ShowMeal from './ShowMeal'
 import Header from './Header'
 
