@@ -38,6 +38,7 @@ class Home extends React.Component {
   render() {
     return (
       <>
+      <h1 className='title'>Meal mate, mate</h1>
       <button onClick={()=> this.goToNewPage('addMeal')}>Add your own meal</button>
       <div className='flex'> 
  
@@ -45,9 +46,9 @@ class Home extends React.Component {
       {this.props.meals.map( meal => {
         return (
           
-          <div key={meal.id} >
+          <div className='mealBox' key={meal.id} >
               <a onClick={()=> this.multiClick(meal.id, 'showMeal')}>
-              <h1>{meal.mealName}</h1>
+              <h1 className='mealBoxh1'>{meal.mealName}</h1>
               <img src={meal.imgURL} alt="meal" className='foodPic'/>
             </a>
           </div>

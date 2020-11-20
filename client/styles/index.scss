@@ -16,6 +16,11 @@ body {
 .showMeal{
   display: flex;
   flex-direction: column;
+  background-color: blanchedalmond;
+  width: 40vw;
+  margin: 0 auto;
+  padding: 10px;
+  border: 3px solid black;
   
 }
 
@@ -61,6 +66,9 @@ body {
   width: 200px;
   height: 200px;
   border-radius: 100%;
+  display: block;
+  margin: 0 auto;
+  
 }
 .flex{
   display: flex;
@@ -69,5 +77,41 @@ body {
   flex-flow: row;
   justify-content: flex-start;
   position: relative;
+  margin: 20px;
 }
 
+.mealBox{
+  margin: 2vw;
+  border: 3px solid blanchedalmond;
+  padding: 5px;
+  background-color: blanchedalmond;
+  border: 2px solid black;
+  align-items: center;
+  border-radius: 10px;
+  width: calc(25% - 5vw);
+  flex-shrink: 0;
+}
+
+.mealBoxh1{
+  background-color: blanchedalmond;
+  border: 1px solid black;
+  padding: 5px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.title{
+  text-align: center;
+  background-color: blanchedalmond;
+  border-radius: 10px;
+  border: 5px solid black;
+  padding: 10px;
+}
+.homebutton{
+  margin: 20px;
+  font-weight: bolder;
+}
+
+.commentBox{
+  height: 50px;
+}
